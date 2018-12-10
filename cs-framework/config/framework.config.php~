@@ -1,0 +1,295 @@
+<?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
+// ===============================================================================================
+// -----------------------------------------------------------------------------------------------
+// FRAMEWORK SETTINGS
+// -----------------------------------------------------------------------------------------------
+// ===============================================================================================
+$settings           = array(
+  'menu_title'      => 'Naga Thai Cuisine',
+  'menu_type'       => 'menu', // menu, submenu, options, theme, etc.
+  'menu_slug'       => 'naga-theme',
+  'ajax_save'       => false,
+  'show_reset_all'  => false,
+  'framework_title' => 'Naga Thai Cuisine <small>by OPCURR</small>',
+);
+
+// ===============================================================================================
+// -----------------------------------------------------------------------------------------------
+// FRAMEWORK OPTIONS
+// -----------------------------------------------------------------------------------------------
+// ===============================================================================================
+$options        = array();
+
+// ----------------------------------------
+// a option section for options overview  -
+// ----------------------------------------
+$options[]      = array(
+  'name'        => 'general',
+  'title'       => 'General',
+  'icon'        => 'fa fa-star',
+
+  // begin: fields
+  'fields'      => array(
+
+    // begin: a field
+    array(
+      'id'      => 'title',
+      'type'    => 'text',
+      'default' => get_bloginfo('title'),
+      'title'   => 'Titre du site',
+    ),
+    // end: a field
+
+    array(
+      'id'      => 'slogan',
+      'type'    => 'text',
+      'default' => get_bloginfo('description'),
+      'title'   => 'Slogan',
+    ),
+
+    array(
+      'id'      => 'upload_1',
+      'type'    => 'upload',
+      'title'   => 'Logo',
+      'default' => get_template_directory_uri() .'/assets/img/logo1.png',
+      'after'   => '<div class="logo-theme" style="background-image:url('.cs_get_option('upload_1').');background-repeat: no-repeat;background-size: contain;background-position: center;"></div>',
+    ),
+
+    array(
+      'id'      => 'favicon',
+      'type'    => 'upload',
+      'title'   => 'Favicon',
+      'default' => get_template_directory_uri() .'/assets/img/logo1.png',
+      'after'   => '<div class="favicon-theme" style="background-image:url('.cs_get_option('favicon').');background-repeat: no-repeat;background-size: contain;background-position: center;"></div>',
+    ),
+
+    array(
+      'id'      => 'to_top',
+      'type'    => 'switcher',
+      'default' => 1,
+      'title'   => 'To top button',
+    ),
+
+    array(
+      'id'      => 'top_bar',
+      'type'    => 'switcher',
+      'default' => 1,
+      'title'   => 'Top Bar',
+    ),
+
+    array(
+      'id'      => 'primary_color',
+      'type'    => 'color_picker',
+      'title'   => 'Primary Theme Color',
+      'default' => '#274da5',
+    ),
+
+    array(
+      'id'      => 'secondary_color',
+      'type'    => 'color_picker',
+      'title'   => 'Secondary Theme Color',
+      'default' => '#3498db',
+    ),
+
+    array(
+      'id'      => 'background_color',
+      'type'    => 'color_picker',
+      'title'   => 'Background Color',
+      'default' => '#000',
+    ),
+
+    array(
+      'id'      => 'background_img',
+      'type'    => 'upload',
+      'title'   => 'Background Image',
+      'after'   => '<div class="logo-theme" style="background-image:url('.cs_get_option('background_img').');background-repeat: no-repeat;background-size: contain;background-position: center;"></div>',
+    ),
+
+  ), // end: fields
+);
+
+//Header Options
+
+$options[] = array(
+	'name' => 'header',
+	'title' => 'Header',
+	'icon'  => 'fa fa-bars',
+	'fields' => array(
+		array(
+			'id' => 'textheadercolor',
+			'type' => 'color_picker',
+			'title' => 'Text Header Color',
+			'default' => '#81d742',
+		),
+		array(
+			'id'  => 'backgroundcolor',
+			'type' => 'color_picker',
+			'title' => 'Background Header Color',
+			'default' => '#81d742',
+		),
+		array(
+			'id'  =>  'hovercolor',
+			'type' => 'color_picker',
+			'title'  => 'Hover Color',
+			'default' => '#81d742',
+		),
+		array(
+			'id'  =>  'logo_settings',
+			'type'  => 'radio',
+			'title'  => 'Logo Settings',
+			'options'  => array(
+				'logo'  =>  'Custom Logo',
+				'title'  =>  'Site Title',
+			),
+			'default' => 'title',
+		),
+		array(
+			'id'  => 'logo_img',
+			'type' => 'upload',
+			'title'  => 'Logo Image',
+			'settings' => array(
+				'upload_type' => 'image',
+				'button_title' => 'Upload Logo',
+				'insert_title' => 'Selectioner cette Image',
+			),
+		),
+		array(
+			'id' => 'standarlogowidth',
+			'type' => 'text',
+			'title' => 'Standar Logo Width',
+		),
+		array(
+			'id' => 'standarlogoheight',
+			'type' => 'text',
+			'title' => 'Standar logo heigt',
+		),
+		array(
+			'id' => 'logomargintop',
+			'type' => 'text',
+			'title' => 'Logo Margin Top',
+		),
+		array(
+			'id' => 'logomarginbottom',
+			'type' => 'text',
+			'title' => 'Logo Margin Bottom',
+		),
+		array(
+			'id' => 'fulllogowidth',
+			'type' => 'switcher',
+			'title' => 'Full Logo width',
+			'default' => 0,
+		),
+		array(
+			'id' => 'centerlogo',
+			'type' => 'switcher',
+			'title' => 'Center Logo',
+			'default' => 0,
+		),
+		array(
+			'id' => 'socialicon',
+			'type' => 'switcher',
+			'title' => 'Social Icon',
+			'default' => 1,
+		),
+		array(
+			'id' => 'search',
+			'type' => 'switcher',
+			'title' => 'Search',
+			'default' => 1,
+		),
+		array(
+			'id' => 'top_menu',
+			'type' => 'switcher',
+			'title' => 'Top Menu',
+			'default' => 0,
+		),
+	),
+);
+
+
+//End Header Options
+//
+//Contact Options
+$options[]  = array(
+  'name'   => 'contact',
+  'title'  => 'Contact',
+  'icon'   => 'fa fa-envelope-o',
+
+  'fields' => array(
+
+    array(
+      'id'      => 'email',
+      'type'    => 'text',
+      'title'   => 'Email',
+      'default' => 'info@exemple.com',
+      'validate' => 'email',
+    ),
+
+    array(
+      'id'       => 'phone',
+      'type'     => 'text',
+      'title'    => 'Phone',
+      'default'  => '+212666666666',
+    ),
+
+    array(
+      'id'       => 'fax',
+      'type'     => 'text',
+      'title'    => 'Fax',
+      'default'  => '+212566666666',
+    ),
+
+    array(
+      'id'    => 'adress',
+      'type'  => 'textarea',
+      'title' => 'Adress',
+      'default'  => 'Casablanca Grand Casablanca Maroc',
+    ),
+
+    array(
+      'id'      => 'mapshow',
+      'type'    => 'switcher',
+      'default' => 1,
+      'title'   => 'Show Map',
+    ),
+
+    array(
+      'id'      => 'latitude',
+      'title'   => 'Latitude',
+      'type'    => 'text',
+      'default' => '48.862725',
+      'help'    => 'to get this variable go to google map',
+    ),
+
+    array(
+      'id'      => 'longitude',
+      'title'   => 'Longitude',
+      'type'    => 'text',
+      'default' => '2.287592000000018',
+      'help'    => 'to get this variable go to google map',
+    ),
+  ),
+);
+
+// ------------------------------
+// license                      -
+// ------------------------------
+$options[]   = array(
+  'name'     => 'license_section',
+  'title'    => 'License',
+  'icon'     => 'fa fa-info-circle',
+  'fields'   => array(
+
+    array(
+      'type'    => 'heading',
+      'content' => '100% GPL License, Yes it is free!'
+    ),
+    array(
+      'type'    => 'content',
+      'content' => 'Codestar Framework is <strong>free</strong> to use both personal and commercial. If you used commercial, <strong>please credit</strong>. Read more about <a href="http://www.gnu.org/licenses/gpl-2.0.txt" target="_blank">GNU License</a>',
+    ),
+
+  )
+);
+
+CSFramework::instance( $settings, $options );

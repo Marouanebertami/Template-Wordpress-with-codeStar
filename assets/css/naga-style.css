@@ -1,0 +1,15 @@
+.logo-theme{
+  width: 420px;
+  height: 150px;
+  border: 2px solid #e0dddd;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.favicon-theme{
+  width: 150px;
+    height: 150px;
+    border: 2px solid #e0dddd;
+    border-radius: 5px;
+    margin-top: 15px;
+}
